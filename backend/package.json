@@ -3,15 +3,25 @@
   "version": "1.0.0",
   "description": "backend for volunteer page",
   "keywords": [
-    "$",
-    "cd",
-    "../../../d/Projects"
+    "express",
+    "mongodb",
+    "node.js",
+    "env"
   ],
   "license": "ISC",
   "author": "",
-  "type": "This utility will walk you through creating a package.json file.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npm run dev"
+    "test": "no test",
+    "dev": "npm run api/index.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "joi": "^17.13.3",
+    "mongoose": "^8.17.0"
   }
 }

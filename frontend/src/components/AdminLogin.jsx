@@ -14,7 +14,7 @@ export default function AdminLogin(props) {
         setLoading(true);
 
         try {
-            const res = await fetch("http://localhost:3000/api/adminlogin", {
+            const res = await fetch("https://volunteer-website-rouge.vercel.app/api/adminlogin", {
                 method: 'POST',
                 body: JSON.stringify(formData)
             });

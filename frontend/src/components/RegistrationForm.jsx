@@ -19,7 +19,7 @@ export default function RegistrationForm(props) {
         setLoading(true);
 
         try {
-            const res = await fetch("http://localhost:3000/api/submit", {
+            const res = await fetch("https://volunteer-website-rouge.vercel.app/api/submit", {
                 method: 'POST',
                 body: JSON.stringify(formData)
             });

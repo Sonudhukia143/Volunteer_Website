@@ -33,9 +33,9 @@ app.use(mongoSanitize());
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: ['http://localhost:5173',"https://volunteerweb.netlify.app/"],   
+    origin: ['http://localhost:5173',"https://volunteerweb.netlify.app"],   
     credentials: true,
-    methods: ['GET'],
+    methods: ['GET','POST'],
     optionsSuccessStatus: 200,
     allowedHeaders: ['Content-Type'],
 };

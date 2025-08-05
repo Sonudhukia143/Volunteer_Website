@@ -3,7 +3,7 @@ import { User } from "../models/User.js";
 const AdminCn = async (req, res) => {
     try {
         const {username,password} = JSON.parse(req.body);
-        console.log(username,password)
+        if(!username || !password) return res.status(404).json({message:"Input fields cannot be empty"})
         if(username != "admin" || password != "admin") return res.status(401).json({message:"Unauthorized Admin Credentials."});
 
         const users = await User.find();

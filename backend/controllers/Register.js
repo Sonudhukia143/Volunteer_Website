@@ -1,7 +1,7 @@
 import { User, validateUser } from "../models/User.js";
 
 const RegisterCn = async (req, res) => {
-    const { error } = validateUser(req.body);
+    const { error } = validateUser(JSON.parse(req.body));
     if (error) return res.status(300).json({ "message": "Credentials are not valid" , "err":error.message});
 
     const {
@@ -14,7 +14,7 @@ const RegisterCn = async (req, res) => {
         state,
         zip
     } =
-        req.body;
+    JSON.parse(req.body);
 
     try {
         const account = await User.findOne({ firstname });
@@ -33,7 +33,7 @@ const RegisterCn = async (req, res) => {
         if(!user) return res.status(404).json({message:"Error in Submitting User"});
         await user.save();
 
-        return res.status(200).json({ message: 'Successfully Registered' });
+        return res.status(200).json({ message: 'Successfully Registered' ,user});
     } catch (error) {
         return res.status(500).json({ message: 'Server error' });
     }

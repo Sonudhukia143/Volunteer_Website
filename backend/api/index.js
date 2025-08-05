@@ -7,6 +7,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
 import Register from '../routes/Register.js';
+import AdminLogin from '../routes/AdminLogin.js';
 
 // if (process.env.NODE_ENV !== "production") {
 //     dotenv.config();
@@ -41,6 +42,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use('/api/submit', Register);
+app.use('/api/adminlogin', AdminLogin);
 app.get('/api/test', (req,res) => {
     res.send("Hello, The Backend Is Working");
 });
